@@ -1,20 +1,15 @@
 import React, {useState} from 'react';
-import { StyleSheet, View, ImageBackground } from 'react-native';
-import Logo from '../logo/logo.js';
-import Formulaire from '../formulaire/formulaire.js';
-import Valid from '../valid/valid.js';
+import { StyleSheet, View, ImageBackground, Text } from 'react-native';
 
 const image2 = require('../../assets/2984100.jpeg');
 
-const Login = (props) => {
+const welcome = (props) => {
 
     return (
     <View style={styles.container}>
         <ImageBackground source={image2} resizeMode="cover" style={styles.image}>
-        <Logo></Logo>
-        <Formulaire user={props.getuser} password={props.getpassword} setpassword={props.setpassword} setuser={props.setuser}/>
-        <Valid setlogin={props.setlogin}/>
-      </ImageBackground>
+            <Text style={{fontSize:40}}>Welcome to my application !</Text>
+        </ImageBackground>
     </View>
     );
 }
@@ -32,4 +27,4 @@ const styles = StyleSheet.create({
 });
   
 
-export default Login;
+export default welcome;

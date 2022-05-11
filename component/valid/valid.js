@@ -7,6 +7,7 @@ const Valid = (props) => {
     const Valid_ = () => {
 
       console.log("Validation")
+      props.setlogin(true);
 
     }
 

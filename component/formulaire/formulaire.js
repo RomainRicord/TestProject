@@ -2,13 +2,12 @@ import React, {Component} from 'react';
 import { StyleSheet, Text, View, Image,TextInput } from 'react-native';
 
 const Formulaire = (props) => {
-
     return (
       <View style={styles.container}>
         <Text style={styles.TextFormu}>Nom d'utilisateur: </Text>
-        <TextInput onChangeText={() => {console.log('text changed')}} style={styles.TextUser} placeholder="Nom d'utilisateur" />
+        <TextInput onChangeText={(e) => {props.setuser(e)}} style={styles.TextUser} placeholder="Nom d'utilisateur" />
         <Text style={styles.TextFormu}>Mot de Passe: </Text>
-        <TextInput onChangeText={() => {console.log('text changed')}} style={styles.TextUser} placeholder="Mot de passe" />
+        <TextInput onChangeText={(e) => {props.setpassword(e)}} style={styles.TextUser} autoComplete="password" secureTextEntry={true} placeholder="Mot de passe" />
       </View>
     );
   }
