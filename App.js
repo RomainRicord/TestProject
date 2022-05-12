@@ -1,9 +1,9 @@
 import { StatusBar } from 'expo-status-bar';
 import React,{useState} from 'react'
 import { StyleSheet, View, ImageBackground } from 'react-native';
-import Login from './component/login/login.js';
-import Register from './component/register/register.js'
-import Welcome from './component/welcome/welcome.js';
+import Login from './src/screens/login.js';
+import Register from './src/screens/register.js'
+import Welcome from './src/screens/welcome.js';
 
 export default function App() {
 

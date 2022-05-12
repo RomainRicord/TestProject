@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
 import { StyleSheet, View, ImageBackground } from 'react-native';
-import Logo from '../logo/logo.js';
-import FormulaireRegister from '../formulaireRegister/formulaireRegister.js';
+import Logo from '../component/logo.js';
+import FormulaireRegister from '../component/formulaireRegister.js';
 import axios from 'axios';
-import ValidRegister from '../iwantregister/iwantregister.js'
+import ValidRegister from '../component/iwantregister.js'
 
 const image2 = require('../../assets/2984100.jpeg');
 
