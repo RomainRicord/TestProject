@@ -4,7 +4,7 @@ import axios from 'axios';
 
 
 
-const letsgopost = (user_,password_) => {
+const letsgopost = (user_,password_,setlogin_) => {
 
   //console.log("LEtsgopost "+user+ " "+ password)
 
@@ -18,9 +18,14 @@ const letsgopost = (user_,password_) => {
   }
 
 
-  axios.post('http://localhost:3000/register',{},testconfigheaders)
+  axios.post('http://localhost:3000/login',{},testconfigheaders)
   .then((res) =>{
-    console.log(res)
+    console.log(res.data)
+    if(res.data == "no"){
+      
+    }else if (res.data == "yes"){
+      setlogin_(true)
+    }
   })
   .catch((err) => {
     console.log(err)
@@ -30,12 +35,14 @@ const letsgopost = (user_,password_) => {
 
 const Valid = (props) => {
 
-  const {user,password} = props
-
+  const {user,password,setlogin} = props
+  
     const Valid_ = () => {
 
-      letsgopost(user,password);
-      props.setlogin(true);
+      if(String(user) != 'undefined' && String(password) != 'undefined'){
+        letsgopost(user,password,setlogin);
+        //props.setlogin(true);
+      }
 
     }
 

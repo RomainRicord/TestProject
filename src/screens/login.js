@@ -10,7 +10,6 @@ const image2 = require('../../assets/2984100.jpeg');
 
 const Login = (props) => {
 
-
     const {getuser, getpassword, setpassword, setuser,setlogin,islogin,getconfirmedpassword,setregister} = props
 
     return (
