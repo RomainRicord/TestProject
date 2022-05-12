@@ -18,7 +18,7 @@ const letsgopost = (user_,password_,setlogin_) => {
   }
 
 
-  axios.post('http://localhost:3000/login',{},testconfigheaders)
+  axios.post('http://192.168.1.16:3000/login',{},testconfigheaders)
   .then((res) =>{
     console.log(res.data)
     if(res.data == "no"){
@@ -36,7 +36,7 @@ const letsgopost = (user_,password_,setlogin_) => {
 const Valid = (props) => {
 
   const {user,password,setlogin} = props
-  
+
     const Valid_ = () => {
 
       if(String(user) != 'undefined' && String(password) != 'undefined'){

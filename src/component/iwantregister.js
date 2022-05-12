@@ -18,9 +18,13 @@ const letsgopost = (user_,password_) => {
   }
 
 
-  axios.post('http://localhost:3000/register',{},testconfigheaders)
+  axios.post('http://192.168.1.16:3000/register',{},testconfigheaders)
   .then((res) =>{
-    console.log(res)
+    if(res.data == "no"){
+      
+    }else if (res.data == "yes"){
+      setlogin_(true)
+    }
   })
   .catch((err) => {
     console.log(err)
