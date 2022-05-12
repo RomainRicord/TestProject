@@ -28,20 +28,29 @@ const letsgopost = (user_,password_) => {
 
 }
 
-const Valid = (props) => {
+const ValidRegister = (props) => {
 
     const Valid_ = () => {
 
-      console.log("Validation "+props.user+" "+props.password)
-      letsgopost(props.user,props.password);
-      props.setlogin(true);
+        if (((props.password === props.passwordconfirmed) && (String(props.password).length > 0) && (String(props.passwordconfirmed).length > 0) && (String(props.user).length > 0)) && (!props.islogin)){
+
+            letsgopost(props.user,props.password);
+            props.setlogin(true)
+            props.setregister(false)
+
+            console.log(`YA2 ${props.password.length} ${String(props.password)}`)
+
+        }else{
+            console.log("YA")
+            props.setregister(true);
+        }
 
     }
 
     return (
     <View style={styles.container}>
         <Pressable style={styles.button} onPress={Valid_}>
-          <Text style={styles.text}>Valider</Text>
+          <Text style={styles.text}>S'inscrire</Text>
        </Pressable>
     </View>
     );
@@ -75,4 +84,4 @@ const styles = StyleSheet.create({
   });
   
 
-export default Valid;
+export default ValidRegister;
