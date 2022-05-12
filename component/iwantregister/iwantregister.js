@@ -30,21 +30,23 @@ const letsgopost = (user_,password_) => {
 
 const ValidRegister = (props) => {
 
+    const {password,passwordconfirmed,setlogin,setregister,islogin,user} = props
+
     const Valid_ = () => {
 
-        if (((props.password === props.passwordconfirmed) && (String(props.password).length > 0) && (String(props.passwordconfirmed).length > 0) && (String(props.user).length > 0)) && (!props.islogin)){
-
-            letsgopost(props.user,props.password);
-            props.setlogin(true)
-            props.setregister(false)
-
-            console.log(`YA2 ${props.password.length} ${String(props.password)}`)
-
+        if (((password === passwordconfirmed) && (String(password).length > 0) && (String(passwordconfirmed).length > 0) && (String(user).length > 0)) && (!islogin)){
+    
+            letsgopost(user,password);
+            setlogin(true)
+            setregister(false)
+    
+            console.log(`YA2 ${password.length} ${String(password)}`)
+    
         }else{
             console.log("YA")
             props.setregister(true);
         }
-
+    
     }
 
     return (

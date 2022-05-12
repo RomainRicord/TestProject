@@ -30,10 +30,11 @@ const letsgopost = (user_,password_) => {
 
 const Valid = (props) => {
 
+  const {user,password} = props
+
     const Valid_ = () => {
 
-      console.log("Validation "+props.user+" "+props.password)
-      letsgopost(props.user,props.password);
+      letsgopost(user,password);
       props.setlogin(true);
 
     }

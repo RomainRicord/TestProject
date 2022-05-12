@@ -2,20 +2,23 @@ import React, {Component} from 'react';
 import { StyleSheet, Text, View,TextInput } from 'react-native';
 
 const FormulaireRegister = (props) => {
+
+    const {setuser,setpassword,setconfirmedpassword,getconfirmedpassword,password} = props
+
     return (
-      <View style={styles.container}>
-        <Text style={styles.TextFormu}>Nom d'utilisateur: </Text>
-        <TextInput onChangeText={(e) => {props.setuser(e)}} style={styles.TextUser} placeholder="Nom d'utilisateur" />
-        <Text style={styles.TextFormu}>Mot de Passe: </Text>
-        <TextInput onChangeText={(e) => {props.setpassword(e)}} style={styles.TextUser} autoComplete="password" secureTextEntry={true} placeholder="Mot de passe" />
-        <Text style={styles.TextFormu}>Confirmation du mot de passe: </Text>
-        <TextInput onChangeText={(e) => {props.setconfirmedpassword(e)}} style={styles.TextUser} autoComplete="password" secureTextEntry={true} placeholder="Mot de passe" />
-        {props.getconfirmedpassword != props.password && String(props.getconfirmedpassword).length > 0 &&
-            <Text style={{fontSize:20,color:'red'}}>
-                Le mot de passe confirmé ne correspond pas au mot de passe
-            </Text>
-        }
-      </View>
+        <View style={styles.container}>
+            <Text style={styles.TextFormu}>Nom d'utilisateur: </Text>
+            <TextInput onChangeText={(e) => {setuser(e)}} style={styles.TextUser} placeholder="Nom d'utilisateur" />
+            <Text style={styles.TextFormu}>Mot de Passe: </Text>
+            <TextInput onChangeText={(e) => {setpassword(e)}} style={styles.TextUser} autoComplete="password" secureTextEntry={true} placeholder="Mot de passe" />
+            <Text style={styles.TextFormu}>Confirmation du mot de passe: </Text>
+            <TextInput onChangeText={(e) => {setconfirmedpassword(e)}} style={styles.TextUser} autoComplete="password" secureTextEntry={true} placeholder="Mot de passe" />
+            {getconfirmedpassword != password && String(getconfirmedpassword).length > 0 &&
+                <Text style={{fontSize:20,color:'red'}}>
+                    Le mot de passe confirmé ne correspond pas au mot de passe
+                </Text>
+            }
+        </View>
     );
   }
   

@@ -10,22 +10,25 @@ const image2 = require('../../assets/2984100.jpeg');
 
 const Login = (props) => {
 
+
+    const {getuser, getpassword, setpassword, setuser,setlogin,islogin,getconfirmedpassword,setregister} = props
+
     return (
     <View style={styles.container}>
         <ImageBackground source={image2} resizeMode="cover" style={styles.image}>
         <Logo></Logo>
         <Formulaire 
-        user={props.getuser} 
-        password={props.getpassword} 
-        setpassword={props.setpassword} 
-        setuser={props.setuser}/>
-        <Valid setlogin={props.setlogin} user={props.getuser} password={props.getpassword}/>
+        user={getuser} 
+        password={getpassword} 
+        setpassword={setpassword} 
+        setuser={setuser}/>
+        <Valid setlogin={setlogin} user={getuser} password={getpassword}/>
         <ValidRegister 
-        setregister={props.setregister} 
-        setlogin={props.setlogin} 
-        islogin={props.islogin} 
-        password={props.getpassword} 
-        confirmedpassword={props.getconfirmedpassword}
+        setregister={setregister} 
+        setlogin={setlogin} 
+        islogin={islogin} 
+        password={getpassword} 
+        confirmedpassword={getconfirmedpassword}
         />
       </ImageBackground>
     </View>
