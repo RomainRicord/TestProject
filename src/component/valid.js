@@ -19,7 +19,6 @@ const letsgopost = (user_,password_,nav) => {
 
   axios.post('http://192.168.1.16:3000/login',{},testconfigheaders)
   .then((res) =>{
-    console.log(res.data)
     if(res.data == "no"){
       
     }else if (res.data == "yes"){
@@ -35,9 +34,6 @@ const letsgopost = (user_,password_,nav) => {
 const Valid = (props) => {
 
   const {user,password,nav} = props
-
-  console.log("Navigation props")
-  console.log(nav)
 
     const Valid_ = () => {
 

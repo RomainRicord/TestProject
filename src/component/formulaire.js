@@ -12,7 +12,7 @@ const Formulaire = () => {
   
     return (
       <View style={styles.container}> 
-        <Text style={styles.TextFormu}>Nom d'utilisateur: {user}</Text>
+        <Text style={styles.TextFormu}>Nom d'utilisateur: </Text>
         <TextInput onChangeText={(e) => {dispatch(setuser(e))}} style={styles.TextUser} placeholder="Nom d'utilisateur" />
         <Text style={styles.TextFormu}>Mot de Passe: </Text>
         <TextInput onChangeText={(e) => {dispatch(setpassword(e))}} style={styles.TextUser} autoComplete="password" secureTextEntry={true} placeholder="Mot de passe" />

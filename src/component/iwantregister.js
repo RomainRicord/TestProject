@@ -42,10 +42,10 @@ const ValidRegister = (props) => {
     
             letsgopost(user,password);
     
-            console.log(`YA2 ${password.length} ${String(password)}`)
+            //console.log(`YA2 ${password.length} ${String(password)}`)
     
         }else{
-            console.log("YA")
+            //console.log("YA")
             nav.navigation.navigate('RegisterScreen')
         }
     
