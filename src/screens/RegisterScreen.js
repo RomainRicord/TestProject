@@ -4,26 +4,26 @@ import Logo from '../component/logo.js';
 import FormulaireRegister from '../component/formulaireRegister.js';
 import axios from 'axios';
 import ValidRegister from '../component/iwantregister.js'
+import { useSelector, useDispatch } from 'react-redux'
+import { setuser } from '../features/user'
+import { setpassword } from '../features/password'
+import { setpasswordconfirmed } from '../features/passwordconfirmed';
 
 const image2 = require('../../assets/2984100.jpeg');
 
-const Register = (props) => {
+const Register = (navigation) => {
 
-    const {getuser,setuser,getpassword,setpassword,setconfirmedpassword,getconfirmedpassword,setregister,setlogin,islogin} = props
-    
+    const user = useSelector((state) => state.user.value)
+    const password = useSelector((state) => state.password.value)
+    const passwordconfirmed = useSelector((state) => state.passwordconfirmed.value)
+
+    const dispatch = useDispatch()
     return (
         <View style={styles.container}>
         <ImageBackground source={image2} resizeMode="cover" style={styles.image}>
         <Logo></Logo>
-        <FormulaireRegister 
-        user={getuser} 
-        password={getpassword}
-        setpassword={setpassword}
-        setuser={setuser}
-        setconfirmedpassword={setconfirmedpassword}
-        getconfirmedpassword={getconfirmedpassword}
-        />
-        <ValidRegister setregister={setregister} user={getuser} password={getpassword} passwordconfirmed={getconfirmedpassword} setlogin={setlogin} islogin={islogin}/>
+        <FormulaireRegister />
+        <ValidRegister nav={navigation} user={user} password={password} passwordconfirmed={passwordconfirmed}/>
       </ImageBackground>
     </View>
     );

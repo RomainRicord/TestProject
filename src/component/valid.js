@@ -3,8 +3,7 @@ import { StyleSheet, Text, View, Button, Pressable } from 'react-native';
 import axios from 'axios';
 
 
-
-const letsgopost = (user_,password_,setlogin_) => {
+const letsgopost = (user_,password_,nav) => {
 
   //console.log("LEtsgopost "+user+ " "+ password)
 
@@ -24,7 +23,7 @@ const letsgopost = (user_,password_,setlogin_) => {
     if(res.data == "no"){
       
     }else if (res.data == "yes"){
-      setlogin_(true)
+      nav.navigation.navigate('WelcomeScreen')
     }
   })
   .catch((err) => {
@@ -35,12 +34,15 @@ const letsgopost = (user_,password_,setlogin_) => {
 
 const Valid = (props) => {
 
-  const {user,password,setlogin} = props
+  const {user,password,nav} = props
+
+  console.log("Navigation props")
+  console.log(nav)
 
     const Valid_ = () => {
 
       if(String(user) != 'undefined' && String(password) != 'undefined'){
-        letsgopost(user,password,setlogin);
+        letsgopost(user,password,nav);
         //props.setlogin(true);
       }
 

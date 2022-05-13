@@ -23,7 +23,7 @@ const letsgopost = (user_,password_) => {
     if(res.data == "no"){
       
     }else if (res.data == "yes"){
-      setlogin_(true)
+      nav.navigation.navigate('WelcomeScreen')
     }
   })
   .catch((err) => {
@@ -34,21 +34,19 @@ const letsgopost = (user_,password_) => {
 
 const ValidRegister = (props) => {
 
-    const {password,passwordconfirmed,setlogin,setregister,islogin,user} = props
+    const {password,passwordconfirmed,user,nav} = props
 
     const Valid_ = () => {
 
-        if (((password === passwordconfirmed) && (String(password).length > 0) && (String(passwordconfirmed).length > 0) && (String(user).length > 0)) && (!islogin)){
+        if (((password === passwordconfirmed) && (String(password).length > 0) && (String(passwordconfirmed).length > 0) && (String(user).length > 0)) && String(password) != "undefined" && String(user) != "undefined" && String(passwordconfirmed) != "undefined"){
     
             letsgopost(user,password);
-            setlogin(true)
-            setregister(false)
     
             console.log(`YA2 ${password.length} ${String(password)}`)
     
         }else{
             console.log("YA")
-            props.setregister(true);
+            nav.navigation.navigate('RegisterScreen')
         }
     
     }

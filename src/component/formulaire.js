@@ -1,16 +1,21 @@
 import React, {Component} from 'react';
 import { StyleSheet, Text, View, Image,TextInput } from 'react-native';
+import { useSelector, useDispatch } from 'react-redux'
+import { setuser } from '../features/user'
+import { setpassword } from '../features/password'
 
-const Formulaire = (props) => {
+const Formulaire = () => {
 
-  const {setuser, setpassword} = props
+  const user = useSelector((state) => state.user.value)
+  const password = useSelector((state) => state.password.value)
+  const dispatch = useDispatch()
   
     return (
-      <View style={styles.container}>
-        <Text style={styles.TextFormu}>Nom d'utilisateur: </Text>
-        <TextInput onChangeText={(e) => {setuser(e)}} style={styles.TextUser} placeholder="Nom d'utilisateur" />
+      <View style={styles.container}> 
+        <Text style={styles.TextFormu}>Nom d'utilisateur: {user}</Text>
+        <TextInput onChangeText={(e) => {dispatch(setuser(e))}} style={styles.TextUser} placeholder="Nom d'utilisateur" />
         <Text style={styles.TextFormu}>Mot de Passe: </Text>
-        <TextInput onChangeText={(e) => {setpassword(e)}} style={styles.TextUser} autoComplete="password" secureTextEntry={true} placeholder="Mot de passe" />
+        <TextInput onChangeText={(e) => {dispatch(setpassword(e))}} style={styles.TextUser} autoComplete="password" secureTextEntry={true} placeholder="Mot de passe" />
       </View>
     );
   }

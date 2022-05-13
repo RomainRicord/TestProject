@@ -3,7 +3,7 @@ import { StyleSheet, View, ImageBackground, Text } from 'react-native';
 
 const image2 = require('../../assets/2984100.jpeg');
 
-const welcome = (props) => {
+const WelcomeScreen = (props) => {
 
     return (
     <View style={styles.container}>
@@ -27,4 +27,4 @@ const styles = StyleSheet.create({
 });
   
 
-export default welcome;
+export default WelcomeScreen;
